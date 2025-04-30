@@ -1,9 +1,13 @@
 package com.tktk;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
@@ -12,15 +16,12 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @SpringBootApplication
 @EnableTransactionManagement
 @EnableDiscoveryClient
+@EnableAsync
 @EnableFeignClients(basePackages = "com.tktk.clients")
-public class UserApplication {
-
-    //修改jvm参数，防止mysql的ping方法检测活跃性的报错
-    static {
-        System.setProperty("druid.mysql.usePingMethod","false");
-    }
-
-     public static void main(String[] args) {
-        SpringApplication.run(UserApplication.class, args);
+public class VideoApplication {
+    public static void main(String[]args){
+        SpringApplication.run(VideoApplication.class);
     }
 }
+
+

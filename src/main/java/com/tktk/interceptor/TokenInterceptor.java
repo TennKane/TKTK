@@ -1,7 +1,6 @@
 package com.tktk.interceptor;
 
 import com.tktk.utils.ThreadLocalUtil;
-import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
@@ -13,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
  * @author TennKane
  */
 @Component
-@Log4j2
 public class TokenInterceptor implements HandlerInterceptor {
     /**
      * 请求前将userId存入到当前线程中
