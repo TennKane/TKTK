@@ -92,7 +92,7 @@ public class UserFollowServiceImpl implements com.tktk.service.UserFollowService
                         .userId(myId)
                         .followId(otherId)
                         .build());
-                return null; // TODO: Fix this weird null return
+                return ResponseResult.successResult();
             }
             // 取消关注，查看是否确实关注了
             Boolean isFollow = stringRedisTemplate.opsForSet().isMember(InteractConstant.REDIS_FOLLOW_KEY + myId, otherId.toString());
@@ -114,9 +114,9 @@ public class UserFollowServiceImpl implements com.tktk.service.UserFollowService
                 followMapper.delete(new QueryWrapper<Follow>()
                         .eq("user_id", myId)
                         .eq("follow_id", otherId));
-                return null; // TODO: Fix this weird null return
+                return ResponseResult.successResult();
             }
-            return null; // TODO: Fix this weird null return
+            return ResponseResult.successResult();
         } finally {
             // 释放锁
             redisLock.unlock();
