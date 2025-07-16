@@ -26,6 +26,7 @@ public class RedissonConfig {
         // 地址
         config.useSingleServer().setAddress(redissonAddress).setPassword(redissonPassword);
         // 创建 RedissonClient 对象
+        config.useSingleServer().setPingConnectionInterval(0);
         return Redisson.create(config);
   }
 }
