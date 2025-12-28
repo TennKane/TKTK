@@ -39,6 +39,3 @@ logging:
         mapper: debug
         service: info
         controller: info
-# Bug: Wrong timeout config
-ribbon:
-  ReadTimeout: 5000
