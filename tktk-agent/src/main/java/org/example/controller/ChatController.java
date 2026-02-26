@@ -10,7 +10,7 @@ import com.alibaba.cloud.ai.graph.streaming.OutputType;
 import com.alibaba.cloud.ai.graph.streaming.StreamingOutput;
 import lombok.Getter;
 import lombok.Setter;
-import org.example.service.AiOpsService;
+
 import org.example.service.ChatService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,8 +40,7 @@ public class ChatController {
 
     private static final Logger logger = LoggerFactory.getLogger(ChatController.class);
 
-    @Autowired
-    private AiOpsService aiOpsService;
+    
     
     @Autowired
     private ChatService chatService;
