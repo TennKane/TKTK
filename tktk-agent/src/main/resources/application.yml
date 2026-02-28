@@ -21,6 +21,13 @@ milvus:
 
 # Spring AI Alibaba DashScope 配置
 spring:
+  application:
+    name: tktk-agent
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
   ai:
     dashscope:
       api-key: ${DASHSCOPE_API_KEY:your-api-key-here}  # 从环境变量读取或使用默认值
