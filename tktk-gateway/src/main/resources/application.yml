@@ -32,6 +32,10 @@ spring:
           uri: lb://tktk-service-search
           predicates:
             - Path=/tktk/search/**
+        - id: tktk-agent
+          uri: lb://tktk-agent
+          predicates:
+            - Path=/api/ai/**
 logging:
   level:
     com:
